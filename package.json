@@ -1,0 +1,23 @@
+{
+  "name": "restapi_musik_zadera_sut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-middleware": "^3.4.2",
+    "jsonwebtoken": "^9.0.2",
+    "middleware": "^1.0.0",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3"
+  }
+}
