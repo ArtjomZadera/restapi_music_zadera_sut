@@ -21,4 +21,6 @@ const Playlist = sequelize.define('Playlist', {
   
 });
 
+Playlist.belongsTo(User, { foreignKey: 'userId' });
+
 module.exports = Playlist;
