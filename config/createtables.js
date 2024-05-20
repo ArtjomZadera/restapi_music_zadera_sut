@@ -28,26 +28,37 @@ sequelize.sync({ force: true })
     const music1 = await Music.create({
       musicname: 'Bones',
       author: 'Imagine Dragons',
+      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
     });
     console.log('Music 1 created:', music1.toJSON());
 
     const music2 = await Music.create({
       musicname: 'The Real Slim Shady',
       author: 'Eminem',
+      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
     });
     console.log('Music 2 created:', music2.toJSON());
 
     const music3 = await Music.create({
       musicname: 'Группа крови',
       author: 'Кино',
+      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
     });
     console.log('Music 3 created:', music3.toJSON());
 
     const music4 = await Music.create({
       musicname: 'Sex With My Ex',
       author: 'LiL PEEP',
+      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
     });
     console.log('Music 4 created:', music4.toJSON());
+
+    const music5 = await Music.create({
+      musicname: 'Blinding lights',
+      author: 'The Weeknd',
+      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
+    });
+    console.log('Music 4 created:', music5.toJSON());
 
     const playlist1 = await Playlist.create({
       playlistname: 'some staff',
