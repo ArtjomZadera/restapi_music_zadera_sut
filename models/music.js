@@ -14,7 +14,11 @@ const Music = sequelize.define('Music', {
   author: {
     type: DataTypes.STRING(100),
     allowNull: false
-  }
+  },
+  filepath: {
+    type: DataTypes.STRING, // Путь к файлу на сервере или URL-адрес
+    allowNull: false,
+  },
 }, {
   timestamps: false,
   tableName: 'musics',

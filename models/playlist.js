@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const User = require('./user');  // Добавлено
 
 const Playlist = sequelize.define('Playlist', {
   id: {
@@ -8,17 +9,17 @@ const Playlist = sequelize.define('Playlist', {
     primaryKey: true
   },
   playlistname: {
-    type: DataTypes.STRING(30),
-    allowNull: false
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   userId: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  }
-}, {
-  timestamps: false,
-  tableName: 'playlists',
-  
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: User,
+      key: 'id',
+    },
+  },
 });
 
 Playlist.belongsTo(User, { foreignKey: 'userId' });

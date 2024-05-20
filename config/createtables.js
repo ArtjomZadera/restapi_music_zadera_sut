@@ -51,21 +51,15 @@ sequelize.sync({ force: true })
 
     const playlist1 = await Playlist.create({
       playlistname: 'some staff',
-      userId: 1,
+      userId: user1.id,
     });
     console.log('Playlist 1 created:', playlist1.toJSON());
 
     const music2playlist1 = await Music2Playlist.create({
-      musicId: 1,
-      playlistId: 1,
+      musicId: music1.id,
+      playlistId: playlist1.id,
     });
-    console.log('Playlist 1 updated:', music2playlist1.toJSON());
-    
-    const music2playlist2 = await Music2Playlist.create({
-      musicId: 2,
-      playlistId: 1,
-    });
-    console.log('Playlist 1 updated:', music2playlist2.toJSON());
+    console.log('Music2Playlist created:', music2playlist1.toJSON());
     
   })
   .catch(error => {
