@@ -4,7 +4,7 @@ const path = require('path');
 
 const User = require(path.join(__dirname, '../models/user'));
 const Music = require(path.join(__dirname, '../models/music'));
-const Playlist = require(path.join(__dirname, '../models/playlsit'));
+const Playlist = require(path.join(__dirname, '../models/playlist'));
 
 
 
