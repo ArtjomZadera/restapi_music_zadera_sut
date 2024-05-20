@@ -1,12 +1,9 @@
 const sequelize = require('../config/database');
 const path = require('path');
 
-
 const User = require(path.join(__dirname, '../models/user'));
 const Music = require(path.join(__dirname, '../models/music'));
 const Playlist = require(path.join(__dirname, '../models/playlist'));
-
-
 
 sequelize.sync({ force: true })
   .then(async () => {
@@ -52,10 +49,10 @@ sequelize.sync({ force: true })
     console.log('Music 4 created:', music4.toJSON());
 
     const playlist1 = await Playlist.create({
-      musicname: 'The Real Slim Shady',
-      author: 'Eminem',
+      playlistname: 'some staff',
+      userId: 1,
     });
-    console.log('Music 2 created:', playlist1.toJSON());
+    console.log('Playlist 1 created:', playlist1.toJSON());
     
   })
   .catch(error => {
