@@ -28,28 +28,28 @@ sequelize.sync({ force: true })
     const music1 = await Music.create({
       musicname: 'Bones',
       author: 'Imagine Dragons',
-      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
+      filepath: '../assets/music/Imagine-Dragons_Bones.mp3'
     });
     console.log('Music 1 created:', music1.toJSON());
 
     const music2 = await Music.create({
       musicname: 'The Real Slim Shady',
       author: 'Eminem',
-      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
+      filepath: '../assets/music/The-Real_Slim-Shady.mp3'
     });
     console.log('Music 2 created:', music2.toJSON());
 
     const music3 = await Music.create({
       musicname: 'Группа крови',
       author: 'Кино',
-      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
+      filepath: '../assets/music/Kino_gruppa_krovi.mp3'
     });
     console.log('Music 3 created:', music3.toJSON());
 
     const music4 = await Music.create({
       musicname: 'Sex With My Ex',
       author: 'LiL PEEP',
-      filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
+      filepath: '../assets/music/Lil-Peep_Sex-With-My-Ex.mp3'
     });
     console.log('Music 4 created:', music4.toJSON());
 
@@ -71,6 +71,12 @@ sequelize.sync({ force: true })
       playlistId: playlist1.id,
     });
     console.log('Music2Playlist created:', music2playlist1.toJSON());
+
+    const music2playlist2 = await Music2Playlist.create({
+      musicId: music2.id,
+      playlistId: playlist1.id,
+    });
+    console.log('Music2Playlist created:', music2playlist2.toJSON());
     
   })
   .catch(error => {

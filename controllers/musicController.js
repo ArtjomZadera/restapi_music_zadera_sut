@@ -36,7 +36,7 @@ const musicController = {
   findMusicByName: async (req, res) => {
     const { name } = req.query;
     try {
-      const music = await Music.findOne({ where: { musicname: name } });
+      const music = await Music.findAll({ like: { musicname: name } });
       if (music) {
         res.status(200).json(music);
       } else {
@@ -50,9 +50,9 @@ const musicController = {
 
   createMusic: async (req, res) => {
     
-    const { musicname, author } = req.body;
+    const { musicname, author, filepath } = req.body;
     try {
-      const newMusic = await Music.create({ musicname, author });
+      const newMusic = await Music.create({ musicname, author, filepath });
       res.status(201).json(newMusic);
     } catch (error) {
       res.status(500).json({ error: 'Failed to create music' });
@@ -61,12 +61,13 @@ const musicController = {
 
   updateMusic: async (req, res) => {
     const { id } = req.params;
-    const { musicname, author } = req.body;
+    const { musicname, author, filepath } = req.body;
     try {
       const music = await Music.findByPk(id);
       if (music) {
         music.musicname = musicname;
         music.author = author;
+        music.filepath = filepath;
         await music.save();
         res.status(200).json(music);
       } else {

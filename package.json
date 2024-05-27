@@ -18,6 +18,8 @@
     "jsonwebtoken": "^9.0.2",
     "middleware": "^1.0.0",
     "mysql2": "^3.9.7",
-    "sequelize": "^6.37.3"
+    "sequelize": "^6.37.3",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
   }
 }

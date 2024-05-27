@@ -4,13 +4,13 @@ const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 const authJwt = require('../middleware/authJwt');
 
-router.get('/', userController.findAll);
-router.get('/:id', userController.findOne);
-router.put('/:id',authJwt.verifyToken, authJwt.checkUserId, userController.update);
-router.delete('/:id',authJwt.verifyToken, authJwt.checkUserId, userController.delete);
-router.get('/username/:username', userController.findUsersByUsername);
+router.get('/users', userController.findAll);
+router.get('/users/:id', userController.findOne);
+router.put('/users/:id',authJwt.verifyToken, authJwt.checkUserId, userController.update);
+router.delete('/users/:id',authJwt.verifyToken, authJwt.checkUserId, userController.delete);
+router.get('/users/username/:username', userController.findUsersByUsername);
 
-router.post('/register', authController.register);
-router.post('/login', authController.login);
+router.post('/users/register', authController.register);
+router.post('/users/login', authController.login);
 
 module.exports = router;
