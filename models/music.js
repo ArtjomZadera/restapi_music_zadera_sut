@@ -29,7 +29,7 @@ const Music = sequelize.define('Music', {
     allowNull: true
   },
   filepath: {
-    type: DataTypes.STRING, // Путь к файлу на сервере или URL-адрес
+    type: DataTypes.STRING,
     allowNull: false,
   },
 }, {
@@ -37,5 +37,7 @@ const Music = sequelize.define('Music', {
   tableName: 'musics',
   
 });
+
+Author.belongsToMany(Music, { through: Music, foreignKey: 'music_group_id' });
 
 module.exports = Music;
