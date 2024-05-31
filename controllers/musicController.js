@@ -50,9 +50,9 @@ const musicController = {
 
   createMusic: async (req, res) => {
     
-    const { musicname, author, filepath } = req.body;
+    const { musicname, music_group_id, filepath, duration, music_image } = req.body;
     try {
-      const newMusic = await Music.create({ musicname, author, filepath });
+      const newMusic = await Music.create({  musicname, music_group_id, filepath, duration, music_image });
       res.status(201).json(newMusic);
     } catch (error) {
       res.status(500).json({ error: 'Failed to create music' });
@@ -61,12 +61,14 @@ const musicController = {
 
   updateMusic: async (req, res) => {
     const { id } = req.params;
-    const { musicname, author, filepath } = req.body;
+    const {  musicname, music_group_id, filepath, duration, music_image } = req.body;
     try {
       const music = await Music.findByPk(id);
       if (music) {
         music.musicname = musicname;
-        music.author = author;
+        music.music_group_id = music_group_id;
+        music.duration = duration;
+        music.music_image = music_image;
         music.filepath = filepath;
         await music.save();
         res.status(200).json(music);

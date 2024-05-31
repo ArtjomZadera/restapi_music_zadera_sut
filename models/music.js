@@ -35,9 +35,9 @@ const Music = sequelize.define('Music', {
 }, {
   timestamps: false,
   tableName: 'musics',
-  
 });
 
-Author.belongsToMany(Music, { through: Music, foreignKey: 'music_group_id' });
+Author.hasMany(Music, { foreignKey: 'music_group_id' });
+Music.belongsTo(Author, { foreignKey: 'music_group_id' });
 
 module.exports = Music;

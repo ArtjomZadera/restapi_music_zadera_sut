@@ -58,7 +58,7 @@ sequelize.sync({ force: true })
 
     const music1 = await Music.create({
       musicname: 'Bones',
-      author: author1.id,
+      music_group_id: author1.id,
       duration: '4:03',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/Imagine-Dragons_Bones.mp3'
@@ -67,7 +67,7 @@ sequelize.sync({ force: true })
 
     const music2 = await Music.create({
       musicname: 'The Real Slim Shady',
-      author: author2.id,
+      music_group_id: author2.id,
       duration: '4:41',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/The-Real_Slim-Shady.mp3'
@@ -76,7 +76,7 @@ sequelize.sync({ force: true })
 
     const music3 = await Music.create({
       musicname: 'Группа крови',
-      author: author3.id,
+      music_group_id: author3.id,
       duration: '3:57',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/Kino_gruppa_krovi.mp3'
@@ -85,7 +85,7 @@ sequelize.sync({ force: true })
 
     const music4 = await Music.create({
       musicname: 'Sex With My Ex',
-      author: author4.id,
+      music_group_id: author4.id,
       duration: '2:06',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/Lil-Peep_Sex-With-My-Ex.mp3'
@@ -94,7 +94,7 @@ sequelize.sync({ force: true })
 
     const music5 = await Music.create({
       musicname: 'Blinding lights',
-      author: author5.id,
+      music_group_id: author5.id,
       duration: '3:21',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'

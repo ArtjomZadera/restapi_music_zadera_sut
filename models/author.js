@@ -1,14 +1,14 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Music = sequelize.define('Music', {
+const Author = sequelize.define('Author', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
   },
   music_group_name: {
-    type: DataTypes.string,
+    type: DataTypes.STRING,
     allowNull: false
   },
   music_group_image: {
@@ -17,8 +17,8 @@ const Music = sequelize.define('Music', {
   },
 }, {
   timestamps: false,
-  tableName: 'musics',
+  tableName: 'authors',
   
 });
 
-module.exports = Music;
+module.exports = Author;
