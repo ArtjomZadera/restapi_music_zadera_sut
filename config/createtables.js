@@ -28,7 +28,7 @@ sequelize.sync({ force: true })
 
     const author1 = await Author.create({
       music_group_name: 'Imagine Dragons',
-      music_group_image: '../assets/'
+      music_group_image: '../assets/images/imaginedragons.jpg'
     });
     console.log('Author created:', author1.toJSON());
 
@@ -69,6 +69,7 @@ sequelize.sync({ force: true })
       musicname: 'The Real Slim Shady',
       author: author2.id,
       duration: '4:41',
+      music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/The-Real_Slim-Shady.mp3'
     });
     console.log('Music 2 created:', music2.toJSON());
@@ -77,6 +78,7 @@ sequelize.sync({ force: true })
       musicname: 'Группа крови',
       author: author3.id,
       duration: '3:57',
+      music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/Kino_gruppa_krovi.mp3'
     });
     console.log('Music 3 created:', music3.toJSON());
@@ -85,6 +87,7 @@ sequelize.sync({ force: true })
       musicname: 'Sex With My Ex',
       author: author4.id,
       duration: '2:06',
+      music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/Lil-Peep_Sex-With-My-Ex.mp3'
     });
     console.log('Music 4 created:', music4.toJSON());
@@ -93,6 +96,7 @@ sequelize.sync({ force: true })
       musicname: 'Blinding lights',
       author: author5.id,
       duration: '3:21',
+      music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'
     });
     console.log('Music 4 created:', music5.toJSON());

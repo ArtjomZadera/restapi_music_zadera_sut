@@ -13,7 +13,7 @@ const Music = sequelize.define('Music', {
   },
   music_group_image: {
     type: DataTypes.STRING, // Путь к файлу на сервере или URL-адрес
-    allowNull: false,
+    allowNull: true,
   },
 }, {
   timestamps: false,

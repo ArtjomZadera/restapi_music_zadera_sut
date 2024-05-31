@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Author = require('./author');
 
 const Music = sequelize.define('Music', {
   id: {
@@ -11,7 +12,7 @@ const Music = sequelize.define('Music', {
     type: DataTypes.STRING(30),
     allowNull: false
   },
-  author: {
+  music_group_id: {
     type: DataTypes.INTEGER,
     references: {
       model: Author,
@@ -25,7 +26,7 @@ const Music = sequelize.define('Music', {
   },
   music_image: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
   filepath: {
     type: DataTypes.STRING, // Путь к файлу на сервере или URL-адрес
