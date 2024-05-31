@@ -14,7 +14,7 @@
     <li>Обмен плейлистами с друзьями</li>
 </ul>
 
-<img src="https://github.com/Satana500/restapi_music_zadera_sut/assets/113170386/609b73ca-2a1b-4207-97f1-c8d44dacbf89" alt="Пример изображения">
+<img src="https://github.com/ArtjomZadera/restapi_music_zadera_sut/assets/113170386/5c7f8180-d0f2-4465-bace-ae9933e9db29" alt="Пример изображения">
 
 <h2>Использование</h2>
 
