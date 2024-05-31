@@ -14,6 +14,8 @@
     <li>Обмен плейлистами с друзьями</li>
 </ul>
 
+<h2>Диаграмма базы данных</h2>
+
 <img src="https://github.com/ArtjomZadera/restapi_music_zadera_sut/assets/113170386/5c7f8180-d0f2-4465-bace-ae9933e9db29" alt="Пример изображения">
 
 <h2>Использование</h2>
