@@ -12,7 +12,19 @@ const Music = sequelize.define('Music', {
     allowNull: false
   },
   author: {
-    type: DataTypes.STRING(100),
+    type: DataTypes.INTEGER,
+    references: {
+      model: Author,
+      key: 'id',
+    },
+    allowNull: false
+  },
+  duration: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  music_image: {
+    type: DataTypes.STRING,
     allowNull: false
   },
   filepath: {
