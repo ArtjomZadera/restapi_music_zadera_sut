@@ -10,6 +10,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDoc = require('./swagger.json');
 
 // Импортируем маршруты
+const authorRoutes = require('./routes/authorRoutes.js');
 const musicRoutes = require('./routes/musicRoutes.js');
 const playlistRoutes = require('./routes/playlistRoutes.js');
 const userRoutes = require('./routes/userRoutes.js');
@@ -21,6 +22,8 @@ app.use((req, res, next) => {
   next();
 });
 
+
+app.use('/api', authorRoutes);
 app.use('/api', musicRoutes);
 app.use('/api', playlistRoutes);
 app.use('/api', userRoutes);
