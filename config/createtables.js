@@ -6,6 +6,7 @@ const Music = require(path.join(__dirname, '../models/music'));
 const Playlist = require(path.join(__dirname, '../models/playlist'));
 const Music2Playlist = require(path.join(__dirname, '../models/music2playlist'));
 const Author = require(path.join(__dirname, '../models/author'));
+const Share = require(path.join(__dirname, '../models/shared_user'));
 
 sequelize.sync({ force: true })
   .then(async () => {
@@ -118,6 +119,13 @@ sequelize.sync({ force: true })
       playlistId: playlist1.id,
     });
     console.log('Music2Playlist created:', music2playlist2.toJSON());
+
+    const share1 = await Share.create({
+      ownerId: user1.id,
+      playlistId: playlist1.id,
+      friendId: user2.id
+    });
+    console.log('Share created:', share1.toJSON());
 
   })
   .catch(error => {
