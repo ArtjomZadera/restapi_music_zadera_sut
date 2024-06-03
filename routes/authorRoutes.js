@@ -3,7 +3,6 @@ const router = express.Router();
 const authorController = require('../controllers/authorController');
 const authJwt = require('../middleware/authJwt');
 
-// Define routes for authors
 router.get('/authors', authorController.showAuthorList);
 router.get('/authors/:id', authorController.findAuthorById);
 router.get('/authors/search/:name', authorController.findAuthorByName);
