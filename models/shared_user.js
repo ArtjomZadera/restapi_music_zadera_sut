@@ -42,4 +42,9 @@ SharedUser.belongsTo(User, { as: 'Owner', foreignKey: 'ownerId' });
 SharedUser.belongsTo(Playlist, { foreignKey: 'playlistId' });
 SharedUser.belongsTo(User, { as: 'Friend', foreignKey: 'friendId' });
 
+
+User.hasMany(SharedUser, { as: 'OwnedShares', foreignKey: 'ownerId' });
+User.hasMany(SharedUser, { as: 'ReceivedShares', foreignKey: 'friendId' });
+Playlist.hasMany(SharedUser, { foreignKey: 'playlistId' });
+
 module.exports = SharedUser;
