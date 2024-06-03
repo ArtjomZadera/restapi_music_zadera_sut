@@ -1,6 +1,4 @@
-const SharedUser = require('../models/shared_user');
-const User = require('../models/user');
-const Playlist = require('../models/playlist');
+const SharedUser = require('../models/shared');
 const generateCRUDControllers = require('./generateCRUDControllers');
 
 const sharedCRUDControllers = generateCRUDControllers(SharedUser);
@@ -10,13 +8,7 @@ const userSharedController = {
 
   getAllSharedPlaylists: async (req, res) => {
     try {
-      const sharedPlaylists = await SharedUser.findAll({
-        include: [
-          { model: User, as: 'Owner', attributes: ['id', 'username', 'email'] },
-          { model: Playlist, attributes: ['id', 'playlistname'] },
-          { model: User, as: 'Friend', attributes: ['id', 'username', 'email'] },
-        ],
-      });
+      const sharedPlaylists = await SharedUser.findAll();
       res.status(200).json(sharedPlaylists);
     } catch (error) {
       res.status(500).json({ error: 'Failed to retrieve shared playlists' });
@@ -26,13 +18,7 @@ const userSharedController = {
   getSharedPlaylistById: async (req, res) => {
     const { id } = req.params;
     try {
-      const sharedPlaylist = await SharedUser.findByPk(id, {
-        include: [
-          { model: User, as: 'Owner', attributes: ['id', 'username', 'email'] },
-          { model: Playlist, attributes: ['id', 'playlistname'] },
-          { model: User, as: 'Friend', attributes: ['id', 'username', 'email'] },
-        ],
-      });
+      const sharedPlaylist = await SharedUser.findByPk(id);
       if (sharedPlaylist) {
         res.status(200).json(sharedPlaylist);
       } else {

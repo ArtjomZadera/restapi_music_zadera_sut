@@ -10,7 +10,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDoc = require('./swagger.json');
 
 // Импортируем маршруты
-const shared_userRoutes = require('./routes/shared_userRoutes.js');
+const sharedRoutes = require('./routes/sharedRoutes.js');
 const authorRoutes = require('./routes/authorRoutes.js');
 const musicRoutes = require('./routes/musicRoutes.js');
 const playlistRoutes = require('./routes/playlistRoutes.js');
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 
 
-app.use('/api', shared_userRoutes);
+app.use('/api', sharedRoutes);
 app.use('/api', authorRoutes);
 app.use('/api', musicRoutes);
 app.use('/api', playlistRoutes);

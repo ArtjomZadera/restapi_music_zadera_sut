@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const userSharedController = require('../controllers/shared_userController');
+const userSharedController = require('../controllers/sharedController');
 const authJwt = require('../middleware/authJwt');
 
 

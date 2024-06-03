@@ -44,7 +44,6 @@
     "/authors": {
       "get": {
         "description": "",
-        "tags": ["Author"], 
         "responses": {
           "200": {
             "description": "OK"
@@ -56,14 +55,6 @@
       },
       "post": {
         "description": "",
-        "tags": ["Author"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "x-access-token",
@@ -105,7 +96,6 @@
     "/authors/{id}": {
       "get": {
         "description": "",
-        "tags": ["Author"],
         "parameters": [
           {
             "name": "id",
@@ -128,14 +118,6 @@
       },
       "put": {
         "description": "",
-        "tags": ["Author"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -184,14 +166,6 @@
       },
       "delete": {
         "description": "",
-        "tags": ["Author"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -227,7 +201,6 @@
     "/authors/search/{name}": {
       "get": {
         "description": "",
-        "tags": ["Author"],
         "parameters": [
           {
             "name": "name",
@@ -257,7 +230,6 @@
     "/playlist/{id}": {
       "get": {
         "description": "",
-        "tags": ["Music2PlayList"],
         "parameters": [
           {
             "name": "id",
@@ -277,14 +249,6 @@
       },
       "post": {
         "description": "",
-        "tags": ["Music2PlayList"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -327,14 +291,6 @@
       },
       "put": {
         "description": "",
-        "tags": ["Music2PlayList"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -383,14 +339,6 @@
       },
       "delete": {
         "description": "",
-        "tags": ["Music2PlayList"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -438,7 +386,6 @@
     "/music": {
       "get": {
         "description": "",
-        "tags": ["Music"],
         "responses": {
           "200": {
             "description": "OK"
@@ -450,14 +397,6 @@
       },
       "post": {
         "description": "",
-        "tags": ["Music"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "x-access-token",
@@ -508,7 +447,6 @@
     "/music/{id}": {
       "get": {
         "description": "",
-        "tags": ["Music"],
         "parameters": [
           {
             "name": "id",
@@ -531,14 +469,6 @@
       },
       "put": {
         "description": "",
-        "tags": ["Music"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -596,14 +526,6 @@
       },
       "delete": {
         "description": "",
-        "tags": ["Music"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -639,7 +561,6 @@
     "/music/search/{name}": {
       "get": {
         "description": "",
-        "tags": ["Music"],
         "parameters": [
           {
             "name": "name",
@@ -669,7 +590,6 @@
     "/playlists": {
       "get": {
         "description": "",
-        "tags": ["PlayList"],
         "responses": {
           "200": {
             "description": "OK"
@@ -681,14 +601,6 @@
       },
       "post": {
         "description": "",
-        "tags": ["PlayList"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "x-access-token",
@@ -730,7 +642,6 @@
     "/playlists/{id}": {
       "get": {
         "description": "",
-        "tags": ["PlayList"],
         "parameters": [
           {
             "name": "id",
@@ -753,14 +664,6 @@
       },
       "put": {
         "description": "",
-        "tags": ["PlayList"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -806,14 +709,169 @@
       },
       "delete": {
         "description": "",
-        "tags": ["PlayList"],
-        "security": [
+        "parameters": [
           {
-            "AuthToken": [
-              "authToken"
-            ]
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/shared": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ownerId": {
+                  "example": "any"
+                },
+                "playlistId": {
+                  "example": "any"
+                },
+                "friendId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/shared/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ownerId": {
+                  "example": "any"
+                },
+                "playlistId": {
+                  "example": "any"
+                },
+                "friendId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -849,7 +907,6 @@
     "/users": {
       "get": {
         "description": "",
-        "tags": ["User"],
         "responses": {
           "default": {
             "description": ""
@@ -860,7 +917,6 @@
     "/users/{id}": {
       "get": {
         "description": "",
-        "tags": ["User"],
         "parameters": [
           {
             "name": "id",
@@ -877,14 +933,6 @@
       },
       "put": {
         "description": "",
-        "tags": ["User"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -909,14 +957,6 @@
       },
       "delete": {
         "description": "",
-        "tags": ["User"],
-        "security": [
-          {
-            "AuthToken": [
-              "authToken"
-            ]
-          }
-        ],
         "parameters": [
           {
             "name": "id",
@@ -943,7 +983,6 @@
     "/users/username/{username}": {
       "get": {
         "description": "",
-        "tags": ["User"],
         "parameters": [
           {
             "name": "username",
@@ -965,7 +1004,6 @@
     "/users/register": {
       "post": {
         "description": "",
-        "tags": ["User"],
         "parameters": [
           {
             "name": "body",
@@ -1002,7 +1040,6 @@
     "/users/login": {
       "post": {
         "description": "",
-        "tags": ["User"],
         "parameters": [
           {
             "name": "body",

@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const User = require('./user');
-const SharedUser = require('./shared_user');
 const Playlist = sequelize.define('Playlist', {
   id: {
     type: DataTypes.INTEGER,
