@@ -44,6 +44,7 @@
     "/authors": {
       "get": {
         "description": "",
+        "tags": ["Author"], 
         "responses": {
           "200": {
             "description": "OK"
@@ -55,12 +56,16 @@
       },
       "post": {
         "description": "",
-        "parameters": [
+        "tags": ["Author"],
+        "security": [
           {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
+        "parameters": [
+ 
           {
             "name": "body",
             "in": "body",
@@ -96,6 +101,7 @@
     "/authors/{id}": {
       "get": {
         "description": "",
+        "tags": ["Author"],
         "parameters": [
           {
             "name": "id",
@@ -118,6 +124,14 @@
       },
       "put": {
         "description": "",
+        "tags": ["Author"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
@@ -125,11 +139,7 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+ 
           {
             "name": "body",
             "in": "body",
@@ -166,18 +176,22 @@
       },
       "delete": {
         "description": "",
+        "tags": ["Author"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
           }
+
         ],
         "responses": {
           "200": {
@@ -201,6 +215,7 @@
     "/authors/search/{name}": {
       "get": {
         "description": "",
+        "tags": ["Author"],
         "parameters": [
           {
             "name": "name",
@@ -230,6 +245,7 @@
     "/playlist/{id}": {
       "get": {
         "description": "",
+        "tags": ["Music2PlayList"],
         "parameters": [
           {
             "name": "id",
@@ -249,6 +265,14 @@
       },
       "post": {
         "description": "",
+        "tags": ["Music2PlayList"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
@@ -256,11 +280,7 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+ 
           {
             "name": "body",
             "in": "body",
@@ -291,6 +311,14 @@
       },
       "put": {
         "description": "",
+        "tags": ["Music2PlayList"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
@@ -298,11 +326,7 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+ 
           {
             "name": "body",
             "in": "body",
@@ -339,6 +363,14 @@
       },
       "delete": {
         "description": "",
+        "tags": ["Music2PlayList"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
@@ -346,11 +378,7 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+ 
           {
             "name": "body",
             "in": "body",
@@ -386,6 +414,7 @@
     "/music": {
       "get": {
         "description": "",
+        "tags": ["Music"],
         "responses": {
           "200": {
             "description": "OK"
@@ -397,12 +426,16 @@
       },
       "post": {
         "description": "",
-        "parameters": [
+        "tags": ["Music"],
+        "security": [
           {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
+        "parameters": [
+ 
           {
             "name": "body",
             "in": "body",
@@ -447,6 +480,7 @@
     "/music/{id}": {
       "get": {
         "description": "",
+        "tags": ["Music"],
         "parameters": [
           {
             "name": "id",
@@ -469,6 +503,14 @@
       },
       "put": {
         "description": "",
+        "tags": ["Music"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
@@ -476,11 +518,7 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+ 
           {
             "name": "body",
             "in": "body",
@@ -526,18 +564,22 @@
       },
       "delete": {
         "description": "",
+        "tags": ["Music"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
           }
+
         ],
         "responses": {
           "200": {
@@ -561,6 +603,7 @@
     "/music/search/{name}": {
       "get": {
         "description": "",
+        "tags": ["Music"],
         "parameters": [
           {
             "name": "name",
@@ -590,6 +633,7 @@
     "/playlists": {
       "get": {
         "description": "",
+        "tags": ["PlayList"],
         "responses": {
           "200": {
             "description": "OK"
@@ -601,12 +645,16 @@
       },
       "post": {
         "description": "",
-        "parameters": [
+        "tags": ["PlayList"],
+        "security": [
           {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
+        "parameters": [
+ 
           {
             "name": "body",
             "in": "body",
@@ -642,6 +690,7 @@
     "/playlists/{id}": {
       "get": {
         "description": "",
+        "tags": ["PlayList"],
         "parameters": [
           {
             "name": "id",
@@ -664,6 +713,14 @@
       },
       "put": {
         "description": "",
+        "tags": ["PlayList"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
@@ -671,11 +728,7 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
+ 
           {
             "name": "body",
             "in": "body",
@@ -709,18 +762,22 @@
       },
       "delete": {
         "description": "",
+        "tags": ["PlayList"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
           }
+
         ],
         "responses": {
           "200": {
@@ -744,6 +801,7 @@
     "/shared": {
       "get": {
         "description": "",
+        "tags": ["PlayList"],
         "responses": {
           "200": {
             "description": "OK"
@@ -755,12 +813,8 @@
       },
       "post": {
         "description": "",
+        "tags": ["PlayList"],
         "parameters": [
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
-          },
           {
             "name": "body",
             "in": "body",
@@ -799,6 +853,7 @@
     "/shared/{id}": {
       "get": {
         "description": "",
+        "tags": ["PlayList"],
         "parameters": [
           {
             "name": "id",
@@ -821,16 +876,12 @@
       },
       "put": {
         "description": "",
+        "tags": ["PlayList"],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "x-access-token",
-            "in": "header",
             "type": "string"
           },
           {
@@ -872,18 +923,22 @@
       },
       "delete": {
         "description": "",
+        "tags": ["PlayList"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
           }
+
         ],
         "responses": {
           "200": {
@@ -907,6 +962,7 @@
     "/users": {
       "get": {
         "description": "",
+        "tags": ["User"],
         "responses": {
           "default": {
             "description": ""
@@ -917,6 +973,7 @@
     "/users/{id}": {
       "get": {
         "description": "",
+        "tags": ["User"],
         "parameters": [
           {
             "name": "id",
@@ -933,18 +990,22 @@
       },
       "put": {
         "description": "",
+        "tags": ["User"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
           }
+
         ],
         "responses": {
           "401": {
@@ -957,18 +1018,22 @@
       },
       "delete": {
         "description": "",
+        "tags": ["User"],
+        "security": [
+          {
+            "AuthToken": [
+              []
+            ]
+          }
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "x-access-token",
-            "in": "header",
-            "type": "string"
           }
+
         ],
         "responses": {
           "401": {
@@ -983,6 +1048,7 @@
     "/users/username/{username}": {
       "get": {
         "description": "",
+        "tags": ["User"],
         "parameters": [
           {
             "name": "username",
@@ -1004,6 +1070,7 @@
     "/users/register": {
       "post": {
         "description": "",
+        "tags": ["User"],
         "parameters": [
           {
             "name": "body",
@@ -1040,6 +1107,7 @@
     "/users/login": {
       "post": {
         "description": "",
+        "tags": ["User"],
         "parameters": [
           {
             "name": "body",
