@@ -35,7 +35,7 @@
 
 <p>Пример запроса:</p>
 <pre><code>{
-  "username": "example_user",
+  "email": "user@example.com",
   "password": "password123"
 }</code></pre>
 
@@ -52,7 +52,7 @@
 
 <p>Пример запроса:</p>
 <pre><code>{
-  "track_id": 123
+  "track_id": 1
 }</code></pre>
 
 <p>Спасибо за использование нашего сервиса! Если у вас есть вопросы или предложения, пожалуйста, создайте issue в этом репозитории.</p>
