@@ -5,7 +5,7 @@ const User = require(path.join(__dirname, '../models/user'));
 const Music = require(path.join(__dirname, '../models/music'));
 const Playlist = require(path.join(__dirname, '../models/playlist'));
 const Music2Playlist = require(path.join(__dirname, '../models/music2playlist'));
-const Author = require(path.join(__dirname, '../models/author'));
+const Group = require(path.join(__dirname, '../models/group'));
 const Share = require(path.join(__dirname, '../models/shared'));
 
 sequelize.sync({ force: true })
@@ -27,39 +27,39 @@ sequelize.sync({ force: true })
     });
     //console.log('User 2 created:', user2.toJSON());
 
-    const author1 = await Author.create({
+    const group1 = await Group.create({
       music_group_name: 'Imagine Dragons',
       music_group_image: '../assets/images/imaginedragons.jpg'
     });
-    //console.log('Author created:', author1.toJSON());
+    //console.log('Group created:', group1.toJSON());
 
-    const author2 = await Author.create({
+    const group2 = await Group.create({
       music_group_name: 'Eminem',
       music_group_image: ''
     });
-    //console.log('Author created:', author2.toJSON());
+    //console.log('Group created:', group2.toJSON());
 
-    const author3 = await Author.create({
+    const group3 = await Group.create({
       music_group_name: 'Кино',
       music_group_image: ''
     });
-    //console.log('Author created:', author3.toJSON());
+    //console.log('Group created:', group3.toJSON());
 
-    const author4 = await Author.create({
+    const group4 = await Group.create({
       music_group_name: 'LiL PEEP',
       music_group_image: ''
     });
-    //console.log('Author created:', author4.toJSON());
+    //console.log('Group created:', group4.toJSON());
 
-    const author5 = await Author.create({
+    const group5 = await Group.create({
       music_group_name: 'The Weeknd',
       music_group_image: ''
     });
-    //console.log('Author created:', author5.toJSON());
+    //console.log('Group created:', group5.toJSON());
 
     const music1 = await Music.create({
       musicname: 'Bones',
-      music_group_id: author1.id,
+      music_group_id: group1.id,
       duration: '4:03',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/Imagine-Dragons_Bones.mp3'
@@ -68,7 +68,7 @@ sequelize.sync({ force: true })
 
     const music2 = await Music.create({
       musicname: 'The Real Slim Shady',
-      music_group_id: author2.id,
+      music_group_id: group2.id,
       duration: '4:41',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/The-Real_Slim-Shady.mp3'
@@ -77,7 +77,7 @@ sequelize.sync({ force: true })
 
     const music3 = await Music.create({
       musicname: 'Группа крови',
-      music_group_id: author3.id,
+      music_group_id: group3.id,
       duration: '3:57',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/Kino_gruppa_krovi.mp3'
@@ -86,7 +86,7 @@ sequelize.sync({ force: true })
 
     const music4 = await Music.create({
       musicname: 'Sex With My Ex',
-      music_group_id: author4.id,
+      music_group_id: group4.id,
       duration: '2:06',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/Lil-Peep_Sex-With-My-Ex.mp3'
@@ -95,7 +95,7 @@ sequelize.sync({ force: true })
 
     const music5 = await Music.create({
       musicname: 'Blinding lights',
-      music_group_id: author5.id,
+      music_group_id: group5.id,
       duration: '3:21',
       music_image:'../assets/images/bones.jpg',
       filepath: '../assets/music/the-weeknd_-_blinding-lights.mp3'

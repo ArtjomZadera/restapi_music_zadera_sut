@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Author = require('./author');
+const Group = require('./group');
 
 const Music = sequelize.define('Music', {
   id: {
@@ -15,7 +15,7 @@ const Music = sequelize.define('Music', {
   music_group_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: Author,
+      model: Group,
       key: 'id',
     },
     allowNull: false
@@ -37,7 +37,7 @@ const Music = sequelize.define('Music', {
   tableName: 'musics',
 });
 
-Author.hasMany(Music, { foreignKey: 'music_group_id' });
-Music.belongsTo(Author, { foreignKey: 'music_group_id' });
+Group.hasMany(Music, { foreignKey: 'music_group_id' });
+Music.belongsTo(Group, { foreignKey: 'music_group_id' });
 
 module.exports = Music;

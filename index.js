@@ -11,7 +11,7 @@ const swaggerDoc = require('./swagger.json');
 
 // Импортируем маршруты
 const sharedRoutes = require('./routes/sharedRoutes.js');
-const authorRoutes = require('./routes/authorRoutes.js');
+const authorRoutes = require('./routes/groupRoutes.js');
 const musicRoutes = require('./routes/musicRoutes.js');
 const playlistRoutes = require('./routes/playlistRoutes.js');
 const userRoutes = require('./routes/userRoutes.js');

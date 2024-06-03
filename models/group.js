@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Author = sequelize.define('Author', {
+const Group = sequelize.define('Group', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -17,8 +17,8 @@ const Author = sequelize.define('Author', {
   },
 }, {
   timestamps: false,
-  tableName: 'authors',
+  tableName: 'groups',
   
 });
 
-module.exports = Author;
+module.exports = Group;
