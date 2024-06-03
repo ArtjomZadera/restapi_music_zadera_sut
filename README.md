@@ -39,20 +39,32 @@
   "password": "password123"
 }</code></pre>
 
+<h3>Добавление трека</h3>
+<p>Отправьте POST-запрос на <code>/api/music</code> с данными трека.</p>
+
+<p>Пример запроса:</p>
+<pre><code>{
+  "musicname": "any",
+  "music_group_id": "any",
+  "filepath": "any",
+  "duration": "any",
+  "music_image": "any"
+}</code></pre>
+
 <h3>Создание плейлиста</h3>
 <p>Отправьте POST-запрос на <code>/api/playlists</code> с названием плейлиста.</p>
 
 <p>Пример запроса:</p>
 <pre><code>{
-  "name": "My Playlist"
+  "playlistname": "My Playlist"
 }</code></pre>
 
 <h3>Добавление трека в плейлист</h3>
-<p>Отправьте POST-запрос на <code>/api/playlists/{playlist_id}/tracks</code> с идентификатором трека.</p>
+<p>Отправьте POST-запрос на <code>/api/playlist/{id}</code> с идентификатором трека.</p>
 
 <p>Пример запроса:</p>
 <pre><code>{
-  "track_id": 1
+  "musicId": 1
 }</code></pre>
 
 <p>Спасибо за использование нашего сервиса! Если у вас есть вопросы или предложения, пожалуйста, создайте issue в этом репозитории.</p>
