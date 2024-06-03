@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const bcrypt = require('bcrypt');
-
+const SharedUser = require('./shared_user');
 const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
@@ -58,4 +58,6 @@ bcrypt.genSalt(10, function(err, salt) {
   }
 });
 
+User.hasMany(SharedUser, { as: 'OwnedShares', foreignKey: 'ownerId' });
+User.hasMany(SharedUser, { as: 'ReceivedShares', foreignKey: 'friendId' });
 module.exports = User;

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const User = require('./user');  // Добавлено
-
+const SharedUser = require('./shared_user');
 const Playlist = sequelize.define('Playlist', {
   id: {
     type: DataTypes.INTEGER,
@@ -23,5 +23,5 @@ const Playlist = sequelize.define('Playlist', {
 });
 
 Playlist.belongsTo(User, { foreignKey: 'userId' });
-
+Playlist.hasMany(SharedUser, { foreignKey: 'playlistId' });
 module.exports = Playlist;

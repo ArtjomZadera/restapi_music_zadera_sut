@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   req.db = db;
   next();
 });
-console.log();
+
 app.use('/api', authorRoutes);
 app.use('/api', musicRoutes);
 app.use('/api', playlistRoutes);
