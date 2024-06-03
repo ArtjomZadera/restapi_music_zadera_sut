@@ -34,5 +34,5 @@ const PORT = process.env.PORT || 5000;
 
 // Запускаем сервер
 app.listen(PORT, () => {
-  console.log(`Сервер работает на порту ${PORT}`);
+  console.log(`Сервер работает на порту http://localhost:${PORT}/api-docs`);
 });
